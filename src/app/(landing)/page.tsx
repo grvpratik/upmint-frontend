@@ -1,9 +1,14 @@
-import React from 'react'
+import React from "react";
+import NavDesktop from "src/components/nav/nav-desktop";
+import NavMobile from "src/components/nav/nav-mobile";
 
 const LandingPage = () => {
-  return (
-    <div>LandingPage</div>
-  )
-}
+	return (
+		<>
+      <NavMobile />
+      <NavDesktop/>
+		</>
+	);
+};
 
-export default LandingPage
+export default LandingPage;

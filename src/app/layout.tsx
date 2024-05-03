@@ -4,6 +4,8 @@ import "src/styles/globals.css";
 
 import { fontSans } from "src/lib/font";
 import { cn } from "src/lib/utils";
+import QueryProvider from "src/provider/query-provider";
+
 
 export const metadata: Metadata = {
 	title: "Create Next App",
@@ -15,9 +17,14 @@ export default function RootLayout({
 }: Readonly<{
 	children: React.ReactNode;
 }>) {
+	
 	return (
 		<html lang="en">
-			<body className={cn("font-sans", fontSans.variable)}>{children}</body>
+			<body className={cn("font-sans", fontSans.variable)}>
+				<QueryProvider >
+					{children}
+				</QueryProvider>
+			</body>
 		</html>
 	);
 }
