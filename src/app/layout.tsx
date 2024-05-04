@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 import "src/styles/globals.css";
 
-import { fontSans } from "src/lib/font";
+import { boldSans, fontSans, primarySans } from "src/lib/font";
 import { cn } from "src/lib/utils";
 import QueryProvider from "src/provider/query-provider";
 
@@ -20,7 +20,7 @@ export default function RootLayout({
 	
 	return (
 		<html lang="en">
-			<body className={cn("font-sans", fontSans.variable)}>
+			<body className={cn("font-sans", fontSans.variable,boldSans.variable,primarySans.variable)}>
 				<QueryProvider >
 					{children}
 				</QueryProvider>

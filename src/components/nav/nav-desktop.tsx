@@ -15,10 +15,12 @@ import {
 	DialogTrigger,
 } from "src/components/ui/dialog";
 import SearchResult from '../search/search-result';
+import NavLinks from './nav-links';
+import { Button } from '../ui/button';
 const NavDesktop = () => {
   return (
-		<nav className=" top-0 fixed w-full px-4  lg:px-16 z-40  bg-background">
-			<div className="hidden lg:grid py-3  grid-cols-3 w-full  max-h-18  gap-2 lg:gap-0">
+		<nav className=" top-0 sticky w-full px-4  lg:px-16 z-40  bg-background ">
+			<div className="hidden lg:grid py-3  grid-cols-3 w-full  max-h-18  gap-2 lg:gap-0 font-medium">
 				<div className="flex gap-8 items-center">
 					<svg
 						fill="#000000"
@@ -44,47 +46,41 @@ const NavDesktop = () => {
 							<g id="Layer_1"></g>{" "}
 						</g>
 					</svg>
-					<div className="lg:flex gap-4 text-sm font-semibold leading-none hidden">
-						<Link href={"/explore"} className=" ">
-							SOL
-						</Link>
-						<Link href={"/explore"} className="">
-							ETH
-						</Link>
-						<Link href={"/explore"} className=" ">
-							BTC
-						</Link>
-					</div>
+					<NavLinks />
 				</div>
 				<div className=" hidden lg:flex w-full ">
-				<Dialog>
-					<DialogTrigger className=" w-full flex-1">
-						<div className=" rounded-full group flex justify-between  items-center bg-accentx bg-input/70  fshadow-inner transition-background  hover:bg-border cursor-poy ">
-							<div className="flex w-full gap-1.5 py-2.5 pl-3.5 items-center  text-white  ">
-								{" "}
-								<Search className="h-4  w-4 text-foreground/70" />
-								<div className=" text-muted-foreground font-semibold line-clamp-1  text-sm ">
-									Search nfts , coins
+					<Dialog>
+						<DialogTrigger className=" w-full flex-1">
+							<div className=" rounded-full group flex justify-between  items-center bg-accentx bg-input/70  fshadow-inner transition-background  hover:bg-border cursor-poy ">
+								<div className="flex w-full gap-1.5 py-2.5 pl-3.5 items-center ">
+									{" "}
+									<Search className="h-4  w-4 text-foreground/70" />
+									<div className=" text-muted-foreground font-semibold line-clamp-1  text-sm leading-relaxed ">
+										Search nfts,coins etc..
+									</div>
 								</div>
+								<kbd className="min-h-[20px] opacity-0 mr-4  group-hover:opacity-100 transition-opacity inline-flex justify-center items-center py-0.5 px-1 bg-background border border-gray-200 font-mono text-xs text-gray-800 rounded shadow-[0px_2px_0px_0px_rgba(0,0,0,0.08)]  dark:border-gray-700 dark:text-gray-200 dark:shadow-[0px_2px_0px_0px_rgba(255,255,255,0.1)]">
+									tab
+								</kbd>
 							</div>
-							<kbd className="min-h-[20px] opacity-0 mr-4  group-hover:opacity-100 transition-opacity inline-flex justify-center items-center py-0.5 px-1 bg-background border border-gray-200 font-mono text-xs text-gray-800 rounded shadow-[0px_2px_0px_0px_rgba(0,0,0,0.08)]  dark:border-gray-700 dark:text-gray-200 dark:shadow-[0px_2px_0px_0px_rgba(255,255,255,0.1)]">
-								tab
-							</kbd>
-						</div>
-					</DialogTrigger>
-					<DialogContent className=" h-screen  rounded-3xl overflow-hidden p-0  ">
-						<div className="w-full">
-							<SearchResult />
-						</div>
-					</DialogContent>
-				</Dialog>
-</div>
+						</DialogTrigger>
+						<DialogContent className=" h-screen  rounded-3xl  overflow-hidden p-0  ">
+							<div className="w-full">
+								<SearchResult />
+							</div>
+						</DialogContent>
+					</Dialog>
+				</div>
 				<div className="lg:flex justify-end gap-8 items-center hidden">
-					<div>explore</div>
-
-					<button className=" rounded-xl text-base text-background  bg-foreground bg-slate-950 py-1.5 px-3">
+					<Link href="/blogs">Resources</Link>
+					<Link href="/blogs">Blogs</Link>
+					
+					<Button
+						variant="default"
+						className=' rounded-full text-base py-5 px-10"'
+					>
 						Sign up
-					</button>
+					</Button>
 				</div>
 			</div>
 		</nav>

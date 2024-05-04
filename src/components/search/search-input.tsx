@@ -1,13 +1,13 @@
 "use client";
 import { Search } from "lucide-react";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import useDebounce from "src/lib/useDebounce";
 
 const SearchInput = ({ setSearch }: { setSearch: (value: string) => void }) => {
-	const [searchInput, setSearchInput] = useState<string>("");
+	const [searchInput, setSearchInput] = React.useState<string>("");
 	const debouncedSearch = useDebounce(searchInput, 500);
 
-	useEffect(() => {
+	React.useEffect(() => {
 		if (debouncedSearch !== null) {
 			const finalSearch = encodeURIComponent(debouncedSearch);
 			setSearch(finalSearch);
@@ -26,7 +26,7 @@ const SearchInput = ({ setSearch }: { setSearch: (value: string) => void }) => {
 				<input
 					onChange={handleChange}
 					type="text"
-					placeholder="Search nfts , coins"
+					placeholder="Search nfts,coins etc.."
 					className=" text-foreground placeholder:text-muted-foreground  outline-none border-none w-full bg-transparent  text-sm font-semibold line-clamp-1 "
 				/>
 			</div>
