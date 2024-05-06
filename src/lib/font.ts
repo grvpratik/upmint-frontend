@@ -17,9 +17,19 @@ export const fontSans = localFont({
 			weight: "600",
 			style: "normal",
 		},
+		{
+			path: "/../../public/fonts/Satoshi-Variable.ttf",
+			weight: "700",
+			style: "normal",
+		},
+		{
+			path: "/../../public/fonts/Satoshi-Variable.ttf",
+			weight: "900",
+			style: "normal",
+		},
 	],
 	variable: "--font-sans",
-	weight:'400'
+	weight: "400",
 });
 export const boldSans = localFont({
 	src: "/../../public/fonts/MonaSansExpanded-ExtraBold.woff2",

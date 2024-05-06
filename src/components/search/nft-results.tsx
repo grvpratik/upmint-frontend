@@ -9,6 +9,7 @@ import getProjects from "src/actions/getCollection";
 import { Card, CardContent } from "../ui/card";
 import { ScrollArea } from "../ui/scroll-area";
 import { Skeleton } from "../ui/skeleton";
+import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 
 interface SearchCardNftProps {
 	name: string;
@@ -24,20 +25,16 @@ const SearchCardNft = ({
 	slug,
 }: SearchCardNftProps) => {
 	return (
-		<Link href={`/mints/${slug}`}>
-			<Card>
-				<CardContent className="flex items-center gap-2 py-2 px-1 hover:bg-accent rounded-lg overflow-hidden">
-					<div className="relative h-10 w-10  flex-shrink-0 rounded-2xl overflow-hidden">
-						<Image
-							className=" object-cover  aspect-square "
-							src={imageUrl}
-							alt={name}
-							fill
-						/>
-					</div>
-					<div className="flex flex-col gap-1">
-						<div className="font-semibold text-sm">{name}</div>{" "}
-						<p className="text-xs text-muted-foreground line-clamp-1 leading-none">
+		<Link className="my-0.5" href={`/mints/${slug}`}>
+			<Card className=" rounded-sm ">
+				<CardContent className="flex items-center gap-2 py-2 px-1 hover:bg-accent  overflow-hidden ">
+					<Avatar className="rounded-sm lg:h-10 lg:w-10  flex-shrink-0">
+						<AvatarImage src={imageUrl} />
+						<AvatarFallback>{name}</AvatarFallback>
+					</Avatar>
+					<div className="flex flex-col ">
+						<div className="font-semibold text-sm">{name}</div>
+						<p className="text-xs text-muted-foreground line-clamp-1 ">
 							{blockchain}
 						</p>
 					</div>
@@ -79,10 +76,10 @@ const NftResults = ({ searchValue }: { searchValue: string }) => {
 				<div className="gap-2 flex  flex-col">
 					{Array.from({ length: 5 }).map((_, index) => (
 						<div key={index} className="flex items-center space-x-4">
-							<Skeleton className="h-12 w-12 rounded-2xl" />
+							<Skeleton className="h-12 w-12 rounded-2xl bg-accent" />
 							<div className="space-y-2">
-								<Skeleton className="h-4 w-[450px]" />
-								<Skeleton className="h-4 w-[400px]" />
+								<Skeleton className="h-4 w-[450px] bg-accent" />
+								<Skeleton className="h-4 w-[400px] bg-accent" />
 							</div>
 						</div>
 					))}
@@ -94,7 +91,7 @@ const NftResults = ({ searchValue }: { searchValue: string }) => {
 						<div className="w-full" key={result.id}>
 							<SearchCardNft
 								name={result.name}
-								imageUrl={result.bannerUrl}
+								imageUrl={result.imageUrl}
 								blockchain={result.blockchain}
 								slug={result.slugId}
 							/>

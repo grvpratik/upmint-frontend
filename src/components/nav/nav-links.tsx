@@ -1,10 +1,13 @@
-import React from 'react'
-import Link from 'next/link';
-import { BitcoinSVG, EthereumSVG, SolanaSVG } from '../svg/icon';
+"use client";
+import React from "react";
+import Link from "next/link";
+import { BitcoinSVG, EthereumSVG, SolanaSVG } from "../svg/icon";
+import { usePathname } from "next/navigation";
 const NavLinks = () => {
-  return (
-		<div className="lg:flex gap-2 text-sm font-semibold leading-none hidden *:flex *:items-center *:gap-1 *:px-1.5 *:py-1  *:rounded-full ">
-			<Link href={"/explore/solana"} >
+	const pathname = usePathname();
+	return (
+		<div className="lg:flex gap-2 text-sm font-bold  leading-none hidden *:flex *:items-center *:gap-1 *:px-1.5 *:py-1   *:rounded-full ">
+			<Link href={"/explore/solana"}>
 				<span>SOL</span>
 				<span>
 					<SolanaSVG className="h-3.5 w-3.5" />
@@ -16,7 +19,7 @@ const NavLinks = () => {
 					<EthereumSVG className="h-3.5 w-3.5" />
 				</span>
 			</Link>
-			<Link href={"/explore/bitcoin"} >
+			<Link href={"/explore/bitcoin"}>
 				<span>BTC</span>
 				<span>
 					<BitcoinSVG className="h-3.5 w-3.5" />
@@ -24,6 +27,6 @@ const NavLinks = () => {
 			</Link>
 		</div>
 	);
-}
+};
 
-export default NavLinks
+export default NavLinks;

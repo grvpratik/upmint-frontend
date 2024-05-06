@@ -78,6 +78,7 @@
 
 @layer components {
 	.root-container {
-		@apply mx-4 sm:mx-8 md:mx-12 lg:mx-16 
+		@apply mx-4 sm:mx-8 md:mx-12 lg:mx-16
 	}
+
 }

@@ -1,7 +1,8 @@
 import * as React from "react";
 
-
-export function MenuSVG(props: React.JSX.IntrinsicAttributes & React.SVGProps<SVGSVGElement>) {
+export function MenuSVG(
+	props: React.JSX.IntrinsicAttributes & React.SVGProps<SVGSVGElement>
+) {
 	return (
 		<svg
 			stroke="currentColor"
@@ -9,7 +10,6 @@ export function MenuSVG(props: React.JSX.IntrinsicAttributes & React.SVGProps<SV
 			strokeWidth={0}
 			viewBox="0 0 20 20"
 			aria-hidden="true"
-			
 			xmlns="http://www.w3.org/2000/svg"
 			{...props}
 		>
@@ -19,6 +19,39 @@ export function MenuSVG(props: React.JSX.IntrinsicAttributes & React.SVGProps<SV
 				clipRule="evenodd"
 				stroke="none"
 			/>
+		</svg>
+	);
+}
+export function FireSVG(
+	props: React.JSX.IntrinsicAttributes & React.SVGProps<SVGSVGElement>
+) {
+	return (
+		<svg
+			xmlns="http://www.w3.org/2000/svg"
+			fill="currentColor"
+			viewBox="0 0 24 24"
+			{...props}
+		>
+			<path
+				fill="currentColor"
+				d="M12.832 21.801c3.126-.626 7.168-2.875 7.168-8.69 0-5.291-3.873-8.815-6.659-10.434-.617-.36-1.341.113-1.341.828v1.828c0 1.442-.606 4.074-2.29 5.169-.86.559-1.79-.278-1.894-1.298l-.086-.838c-.1-.974-1.092-1.565-1.87-.971C4.461 8.46 3 10.33 3 13.11c0 7.111 5.289 8.89 7.933 8.89.154 0 .316-.006.484-.015C10.111 21.874 8 21.064 8 18.444c0-2.05 1.495-3.435 2.631-4.11.306-.18.663.055.663.41v.59c0 .45.175 1.155.59 1.637.47.546 1.159-.026 1.214-.744.018-.226.246-.37.442-.256.641.375 1.46 1.175 1.46 2.473 0 2.048-1.129 2.99-2.168 3.357z"
+			></path>
+		</svg>
+	);
+}
+export function StarsSVG(
+	props: React.JSX.IntrinsicAttributes & React.SVGProps<SVGSVGElement>
+) {
+	return (
+		<svg
+			xmlns="http://www.w3.org/2000/svg"
+			
+			className="bi bi-stars"
+			fill="currentColor"
+			viewBox="0 0 16 16"
+			{...props}
+		>
+			<path d="M7.657 6.247c.11-.33.576-.33.686 0l.645 1.937a2.89 2.89 0 001.829 1.828l1.936.645c.33.11.33.576 0 .686l-1.937.645a2.89 2.89 0 00-1.828 1.829l-.645 1.936a.361.361 0 01-.686 0l-.645-1.937a2.89 2.89 0 00-1.828-1.828l-1.937-.645a.361.361 0 010-.686l1.937-.645a2.89 2.89 0 001.828-1.828l.645-1.937zM3.794 1.148a.217.217 0 01.412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 010 .412l-1.162.387A1.734 1.734 0 004.593 5.69l-.387 1.162a.217.217 0 01-.412 0L3.407 5.69A1.734 1.734 0 002.31 4.593l-1.162-.387a.217.217 0 010-.412l1.162-.387A1.734 1.734 0 003.407 2.31l.387-1.162zM10.863.099a.145.145 0 01.274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 010 .274l-.774.258a1.156 1.156 0 00-.732.732l-.258.774a.145.145 0 01-.274 0l-.258-.774a1.156 1.156 0 00-.732-.732L9.1 2.137a.145.145 0 010-.274l.774-.258c.346-.115.617-.386.732-.732L10.863.1z"></path>
 		</svg>
 	);
 }
