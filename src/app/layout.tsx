@@ -5,7 +5,8 @@ import "src/styles/globals.css";
 import { boldSans, fontSans, primarySans } from "src/lib/font";
 import { cn } from "src/lib/utils";
 import QueryProvider from "src/provider/query-provider";
-
+import { ThemeProvider } from "src/provider/theme-provider";
+import { SessionProvider } from "next-auth/react";
 
 export const metadata: Metadata = {
 	title: "Create Next App",
@@ -17,13 +18,28 @@ export default function RootLayout({
 }: Readonly<{
 	children: React.ReactNode;
 }>) {
-	
 	return (
 		<html lang="en">
-			<body className={cn("font-sans", fontSans.variable,boldSans.variable,primarySans.variable)}>
-				<QueryProvider >
-					{children}
-				</QueryProvider>
+			<body
+				className={cn(
+					"font-sans",
+					fontSans.variable,
+					boldSans.variable,
+					primarySans.variable
+				)}
+			>
+				<SessionProvider>
+					<QueryProvider>
+						<ThemeProvider
+							attribute="class"
+							defaultTheme="system"
+							enableSystem
+							disableTransitionOnChange
+						>
+							{children}
+						</ThemeProvider>
+					</QueryProvider>
+				</SessionProvider>
 			</body>
 		</html>
 	);

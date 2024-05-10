@@ -1,25 +1,24 @@
 import axios from "axios";
 import qs from "query-string";
-
-const getProjects = async (query: any) => {
-	const URL = `${process.env.NEXT_PUBLIC_API_URL}/projects`;
+const getProjectbyTags = async ({
+	network,
+	tag,
+	query,
+}: {
+	network: string;
+	tag: string;
+	query: any;
+}) => {
+	const URL = `${process.env.NEXT_PUBLIC_API_URL}/projects/tags/${tag}`;
 	const queryParams = {
-		blockchain: query.blockchain,
-		featured: query.featured,
-		search: query.search,
-		sort: query.sort,
-		order: query.order,
-		page: query.page,
-		items: query.items,
-		date: query.date,
+		blockchain: query.network,
 	};
 
-	 const url = qs.stringifyUrl({
-			url: URL,
-			query: queryParams,
-		});
+	const url = qs.stringifyUrl({
+		url: URL,
+		query: queryParams,
+	});
 
-console.log(url,"URL")
 	try {
 		const res = await axios.get(url, {
 			headers: {
@@ -39,4 +38,4 @@ console.log(url,"URL")
 	}
 };
 
-export default getProjects;
+export default getProjectbyTags;

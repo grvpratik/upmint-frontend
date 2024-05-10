@@ -4,8 +4,7 @@ import React, { useState } from "react";
 import SearchInput from "./search-input";
 
 import { useQuery } from "@tanstack/react-query";
-import getProjects from "src/actions/getCollection";
-
+import getProjects from "src/actions/getProjects";
 
 import { ScrollArea } from "../ui/scroll-area";
 import {
@@ -30,10 +29,13 @@ const SearchResult = () => {
 					<p className="text-sm  leading-6 font-semibold my-1">
 						What are you looking for?
 					</p>
-					<Tabs onValueChange={(value)=>console.log(value,"VALUE")} defaultValue="nfts">
-						<TabsList >
+					<Tabs
+						onValueChange={(value) => console.log(value, "VALUE")}
+						defaultValue="nfts"
+					>
+						<TabsList>
 							<TabsTrigger value="nfts">Nfts</TabsTrigger>
-							<TabsTrigger  value="posts">Posts</TabsTrigger>
+							<TabsTrigger value="posts">Posts</TabsTrigger>
 						</TabsList>
 						<TabsContent value="nfts">
 							<NftResults searchValue={searchValue} />
@@ -44,7 +46,7 @@ const SearchResult = () => {
 					</Tabs>
 				</div>
 			) : (
-				<SearchFeatured/>
+				<SearchFeatured />
 			)}
 		</>
 	);

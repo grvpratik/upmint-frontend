@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 import { useQuery } from "@tanstack/react-query";
-import getProjects from "src/actions/getCollection";
+import getProjects from "src/actions/getProjects";
 
 import { Card, CardContent } from "../ui/card";
 import { ScrollArea } from "../ui/scroll-area";
@@ -54,7 +54,7 @@ const NftResults = ({ searchValue }: { searchValue: string }) => {
 			try {
 				const result = await getProjects({
 					search: searchValue,
-					items: 10,
+					size: 10,
 				});
 
 				setSearchResult(result.result || []); // Set search result, ensure result is an array

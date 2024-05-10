@@ -5,8 +5,7 @@ export function cn(...inputs: ClassValue[]) {
 	return twMerge(clsx(inputs));
 }
 
-
-export function toPascalCase(string:string) {
+export function toPascalCase(string: string) {
 	return `${string}`
 		.toLowerCase()
 		.replace(new RegExp(/[-_]+/, "g"), " ")
@@ -17,3 +16,12 @@ export function toPascalCase(string:string) {
 		)
 		.replace(new RegExp(/\w/), (s) => s.toUpperCase());
 }
+
+// Function to check if the given ID is "bitcoin", "ethereum", or "solana"
+export const isSupportedBlockchain = (id: string): boolean => {
+	// List of supported blockchain IDs
+	const supportedBlockchains: string[] = ["bitcoin", "ethereum", "solana"];
+
+	// Check if the provided ID is in the list of supported blockchains
+	return supportedBlockchains.includes(id);
+};

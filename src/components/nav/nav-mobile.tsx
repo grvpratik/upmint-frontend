@@ -13,6 +13,7 @@ import {
 
 import { MenuSVG } from "../svg/icon";
 import SearchResult from "../Search/search-result";
+import ProfileDropdown from "../ui/profile-dropdown";
 
 const NavMobile = () => {
 	return (
@@ -24,8 +25,8 @@ const NavMobile = () => {
 					viewBox="0 0 20 20"
 				>
 					<g>
-						<g fill="none" fillRule="evenodd" stroke="none" strokeWidth="1">
-							<g fill="#000" transform="translate(-60 -4559)">
+						<g fill="currentColor" fillRule="evenodd" stroke="currentColor" strokeWidth="1">
+							<g fill="currentColor" transform="translate(-60 -4559)">
 								<g transform="translate(56 160)">
 									<path d="M6.702 4412.072l5.397-7.986a.5.5 0 01.901.298v11.05a.5.5 0 01-.753.433l-5.397-3.065a.5.5 0 01-.148-.73zm14.447.73l-5.396 3.065a.5.5 0 01-.753-.432v-11.051a.5.5 0 01.901-.298l5.397 7.986a.5.5 0 01-.149.73zM15 4399.526a1.214 1.214 0 00-2 0l-8.76 12.504a1.214 1.214 0 00.36 1.772l8.4 4.824.423.228c.36.194.793.194 1.153 0l.424-.228 8.4-4.824a1.215 1.215 0 00.36-1.772L15 4399.526z"></path>
 								</g>
@@ -50,10 +51,8 @@ const NavMobile = () => {
 						<SearchResult />
 					</SheetContent>
 				</Sheet>
-
-				<span className=" items-center rounded-full p-1 flex">
-					<MenuSVG className="h-5 w-5" />
-				</span>
+<ProfileDropdown/>
+				
 			</div>
 		</>
 	);

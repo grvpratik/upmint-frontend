@@ -1,18 +1,23 @@
 import React from "react";
 import NavDesktop from "src/components/nav/nav-desktop";
 import NavMobile from "src/components/nav/nav-mobile";
-import NftTags from "src/components/nft-section/nft-tags-select";
+import NftTags from "src/components/nft-section/tag-filter";
 import {
 	Tabs,
 	TabsContent,
 	TabsList,
 	TabsTrigger,
 } from "src/components/ui/tabs";
-import ServerNftTags from "src/components/nft-section/server-nft-tags";
 
 import { landingContent as content } from "src/lib/site.info";
 import { Button } from "src/components/ui/button";
-const LandingPage = () => {
+import getTags from "src/actions/getTags";
+import getProjects from "src/actions/getProjects";
+import { ModeToggle } from "src/components/theme-toggle";
+import Link from "next/link";
+const LandingPage = async () => {
+	const tags = await getTags();
+	const projectArray = await getProjects({});
 	const soonBadgeClass =
 		"absolute bg-blue-500 text-blue-100 leading-none px-2 pb-0.5 text-xs font-semibold rounded-full -top-3 -right-5 ";
 
@@ -22,39 +27,61 @@ const LandingPage = () => {
 			<NavDesktop />
 
 			<main className="flex flex-col py-32 p-4 rounded-lg root-container gap-4 relative ">
-				<div className="font-extrabold uppercase text-3xl md:text-5xl lg:text-7xl font-secondary flex flex-col gap-2">
+				<span>
+					<Link
+						href="#"
+						className="inline-flex justify-between items-center py-1 px-1 pr-4  text-sm text-gray-700 bg-gray-100 rounded-full dark:bg-gray-800 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700"
+						role="alert"
+					>
+						<span className="text-xs bg-orange-600 rounded-full  text-white px-2 aspect-square py-1 mr-3 font-semibold">
+							P
+						</span>{" "}
+						<span className="text-sm font-medium">
+							Vote us on Producthunt
+						</span>
+						<svg
+							className="ml-2 w-4 h-4"
+							fill="currentColor"
+							viewBox="0 0 20 20"
+							xmlns="http://www.w3.org/2000/svg"
+						>
+							<path
+								fillRule="evenodd"
+								d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+								clipRule="evenodd"
+							/>
+						</svg>
+					</Link>
+				</span>
+				<div className="font-extrabold uppercase text-3xl md:text-5xl lg:text-7xl font-sans flex flex-col gap-2">
 					{Object.entries(content.headings).map(([key, value]) => (
 						<span key={key}>{value}</span>
 					))}
 				</div>
-				<p className=" text-xs sm:text:sm lg:text-base text-muted-foreground text-balance max-w-screen-sm ">
+				<p className=" lg:font-semibold text-sm lg:text-base text-muted-foreground text-balance max-w-screen-sm ">
 					{content.description}
 				</p>
-				<span>
-					<button
-						className="select-none font-secondary font-bold rounded-lg bg-blue-500 py-3 px-6 text-center align-middle text-base text-white shadow-md shadow-blue-500/20 transition-all hover:shadow-lg hover:shadow-blue-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
-						type="button"
-					>
-						{content.ctaText}
-					</button>
-					{/* <Button
-						variant="primary"
+				<span className=" flex lg:flex-row flex-col gap-4">
+					<Button
+						className=" lg:text-lg font-semibold"
 						size="lg"
-						className=" font-secondary font-bold rounded-lg py-6 "
-					>
-						{content.ctaText}
-					</Button> */}
-					{/* <Button
 						variant="primary"
-						size="sm"
-						className="  font-semibold  "
 					>
-						{content.ctaText}
-					</Button> */}
+						Create account
+					</Button>
+					<Button
+						className=" lg:text-lg font-semibold"
+						size="lg"
+						variant="outline"
+					>
+						view plans
+					</Button>
 				</span>
+				
+				{/* <ModeToggle /> */}
 			</main>
 			<main className=" root-container flex flex-col">
-				<h1 className="text-2xl  font-extrabold tracking-tight lg:text-5xl  my-2 font-secondary">
+				<h1 className="text-2xl  font-extrabold tracking-tight lg:text-5xl  my-2 ">
 					Explore
 				</h1>
 				<Tabs defaultValue="Nfts">
@@ -80,7 +107,7 @@ const LandingPage = () => {
 						</TabsTrigger>
 					</TabsList>
 					<TabsContent value="Nfts">
-						<ServerNftTags />
+						<NftTags tagArray={tags} projectArray={projectArray} />
 					</TabsContent>
 
 					<TabsContent value="Coins">Change your Coins here.</TabsContent>
