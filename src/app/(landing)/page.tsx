@@ -79,7 +79,7 @@ const LandingPage = async () => {
 				{/* <ModeToggle /> */}
 			</main>
 			<main className=" root-container flex flex-col">
-				<h1 className="text-2xl  font-extrabold tracking-tight lg:text-5xl  my-2 ">
+				<h1 className="text-3xl  font-extrabold tracking-tight lg:text-5xl  my-2 ">
 					Explore
 				</h1>
 				<Tabs defaultValue="Nfts">
