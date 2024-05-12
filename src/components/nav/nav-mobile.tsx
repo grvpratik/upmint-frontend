@@ -2,16 +2,10 @@
 
 import React from "react";
 import { Search } from "lucide-react";
-import {
-	Sheet,
-	SheetContent,
+import { Sheet, SheetContent, SheetTrigger } from "src/components/ui/sheet";
 
-	SheetTrigger,
-} from "src/components/ui/sheet";
-
-import SearchOutput from "src/components/Search/search-output";
+import SearchOutput from "src/components/Query/search-output";
 import ProfileDropdown from "src/components/ui/profile-dropdown";
-
 
 const NavMobile = () => {
 	return (

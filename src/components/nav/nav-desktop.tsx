@@ -14,7 +14,7 @@ import {
 import NavLinks from "./nav-links";
 
 import ProfileDropdown from "../ui/profile-dropdown";
-import SearchOutput from "src/components/Search/search-output";
+import SearchOutput from "src/components/Query/search-output";
 const NavDesktop = () => {
 	return (
 		<nav className=" top-0 sticky w-full px-4 h-16 items-center hidden lg:block  lg:px-16 z-40  bg-background ">
