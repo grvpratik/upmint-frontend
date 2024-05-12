@@ -12,12 +12,12 @@ import {
 import { landingContent as content } from "src/lib/site.info";
 import { Button } from "src/components/ui/button";
 import getTags from "src/actions/getTags";
-import getProjects from "src/actions/getProjects";
-import { ModeToggle } from "src/components/theme-toggle";
+import getProjects, { data } from "src/actions/getProjects";
+
 import Link from "next/link";
 const LandingPage = async () => {
-	const tags = await getTags();
-	const projectArray = await getProjects({});
+	const tags =  getTags();
+	const projectArray =  getProjects({});
 	const soonBadgeClass =
 		"absolute bg-blue-500 text-blue-100 leading-none px-2 pb-0.5 text-xs font-semibold rounded-full -top-3 -right-5 ";
 
@@ -105,7 +105,7 @@ const LandingPage = async () => {
 						</TabsTrigger>
 					</TabsList>
 					<TabsContent value="Nfts">
-						<NftTags tagArray={tags} projectArray={projectArray} />
+						<NftTags tagArray={tags} projectArray={data} />
 					</TabsContent>
 
 					<TabsContent value="Coins">Change your Coins here.</TabsContent>
