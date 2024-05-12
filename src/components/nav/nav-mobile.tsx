@@ -11,14 +11,14 @@ import {
 	SheetTrigger,
 } from "src/components/ui/sheet";
 
-import { MenuSVG } from "../svg/icon";
+
 import SearchResult from "../Search/search-result";
 import ProfileDropdown from "../ui/profile-dropdown";
 
 const NavMobile = () => {
 	return (
 		<>
-			<div className="flex  gap-3 items-center mt-2  root-container lg:hidden">
+			<div className="flex top-0  sticky  gap-3 items-center mt-2  root-container lg:hidden">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					className="h-7 w-7"

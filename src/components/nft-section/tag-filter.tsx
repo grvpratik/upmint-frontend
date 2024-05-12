@@ -11,6 +11,7 @@ import { toPascalCase } from "src/lib/utils";
 import NftsList from "./nft-list";
 import { ScrollArea, ScrollBar } from "../ui/scroll-area";
 import { Project } from "../../../types/root";
+import { Button } from "../ui/button";
 
 interface NftTagsProps {
 	blockchain?: string;
@@ -63,40 +64,46 @@ const NftTags = ({
 
 	return (
 		<>
-			{/* Tabs component for displaying different categories */}
-			<Tabs onValueChange={(value) => setTabValue(value)}>
-				<ScrollArea>
-					{/* Tabs list for different categories */}
-					<TabsList className="flex items-center gap-2 pb-4 ">
-						{/* Default tabs for 'New' and 'Trending' */}
-						<TabsTrigger className={tabTriggerClass} value="new">
-							<StarsSVG className="h-4 w-4 " /> <span>New</span>
-						</TabsTrigger>
-						<TabsTrigger className={tabTriggerClass} value="trending">
-							<FireSVG className="h-4 w-4" />
-							<span>Trending</span>
-						</TabsTrigger>
-						{/* Separator between default tabs and tag tabs */}
-						<Separator orientation="vertical" className="h-6 " />
-						{/* Mapping through tagArray to display custom tags */}
-						{tagArray &&
-							tagArray.map((tag: TagsProps) => (
-								<TabsTrigger
-									key={tag.id}
-									className={tabTriggerClass}
-									value={tag.name}
-								>
-									<span>{toPascalCase(tag.name)}</span>
-								</TabsTrigger>
-							))}{" "}
-					</TabsList>
-					{/* Horizontal scrollbar */}
-					<ScrollBar orientation="horizontal" />
-				</ScrollArea>
-			</Tabs>
-			{/* Component to display NFT list based on selected tag */}
+			{" "}
+			{/* <div className="relative max-h-screen">
+				<div className="absolute inset-0  from-background to-transparent bg-gradient-to-t z-30 flex items-center justify-center h-full">
+					<Button variant='primary'>Sign up</Button>
+				</div> */}
+				{/* Tabs component for displaying different categories */}
+				<Tabs onValueChange={(value) => setTabValue(value)}>
+					<ScrollArea>
+						{/* Tabs list for different categories */}
+						<TabsList className="flex items-center gap-2 pb-4 ">
+							{/* Default tabs for 'New' and 'Trending' */}
+							<TabsTrigger className={tabTriggerClass} value="new">
+								<StarsSVG className="h-4 w-4 " /> <span>New</span>
+							</TabsTrigger>
+							<TabsTrigger className={tabTriggerClass} value="trending">
+								<FireSVG className="h-4 w-4" />
+								<span>Trending</span>
+							</TabsTrigger>
+							{/* Separator between default tabs and tag tabs */}
+							<Separator orientation="vertical" className="h-6 " />
+							{/* Mapping through tagArray to display custom tags */}
+							{tagArray &&
+								tagArray.map((tag: TagsProps) => (
+									<TabsTrigger
+										key={tag.id}
+										className={tabTriggerClass}
+										value={tag.name}
+									>
+										<span>{toPascalCase(tag.name)}</span>
+									</TabsTrigger>
+								))}{" "}
+						</TabsList>
+						{/* Horizontal scrollbar */}
+						<ScrollBar orientation="horizontal" />
+					</ScrollArea>
+				</Tabs>
+				{/* Component to display NFT list based on selected tag */}
 
-			<NftsList projectsByTag={projectsByTag} cardLoading={isLoading} />
+				<NftsList projectsByTag={projectsByTag} cardLoading={isLoading} />
+			{/* </div> */}
 		</>
 	);
 };

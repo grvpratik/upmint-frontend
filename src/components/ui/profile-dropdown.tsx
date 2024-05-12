@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { signIn, useSession } from "next-auth/react";
+import { signIn, signOut, useSession } from "next-auth/react";
 import {
 	DropdownMenu,
 	DropdownMenuContent,
@@ -13,26 +13,30 @@ import {
 
 import { Avatar, AvatarFallback, AvatarImage } from "src/components/ui/avatar";
 import { Button } from "./button";
-import { MenuSVG, ProfileSVG } from "../svg/icon";
-import { MoonStar, Settings, User } from "lucide-react";
+import { MenuSVG } from "../svg/icon";
+import { LogOut, MoonStar, Settings, User } from "lucide-react";
 import { ModeToggle } from "../theme-toggle";
+import { Skeleton } from "./skeleton";
 const ProfileDropdown = () => {
 	const { data: session, status } = useSession();
 	return (
 		<>
 			{!session && status === "unauthenticated" && (
 				<>
-					<span className=" items-center rounded-full p-1 flex lg:hidden">
+					<span className=" items-center-full p-1 flex lg:hidden">
 						<MenuSVG className="h-5 w-5" />
 					</span>
 					<Button
 						variant="default"
-						className=" rounded-full  py-5 px-8 hidden lg:flex"
+						className="-full  py-5 px-8 hidden lg:flex"
 						onClick={() => signIn("twitter")}
 					>
 						Sign up
 					</Button>
 				</>
+			)}
+			{status === "loading" && (
+				<Skeleton className="h-10 w-10 rounded-full overflow-hidden" />
 			)}
 
 			{session?.user && status === "authenticated" && (
@@ -47,12 +51,12 @@ const ProfileDropdown = () => {
 						</Avatar>
 					</DropdownMenuTrigger>
 					<DropdownMenuContent
-						className=" p-2"
+						className=" p-2 font-semibold text-sm"
 						side="bottom"
 						align="end"
 						sideOffset={10}
 					>
-						<DropdownMenuLabel className="">
+						<DropdownMenuLabel>
 							<div className=" flex gap-2 items-center ">
 								<Avatar className="lg:h-11 lg:w-11">
 									<AvatarImage
@@ -62,34 +66,39 @@ const ProfileDropdown = () => {
 									<AvatarFallback>U</AvatarFallback>
 								</Avatar>
 								<span className="flex flex-col gap-1">
-									<span className="  text-lg font-semibold leading-none">
+									<span className="  text-base font-semibold leading-none line-clamp-1">
 										{session?.user.name}
 									</span>
-									<span className=" text-bace text-muted-foreground  leading-none">
-										{session.user.email || "userr@email.com"}
+									<span className="  text-muted-foreground  leading-none line-clamp-1">
+										{session.user.email || "email@address"}
 									</span>
 								</span>
 							</div>
 						</DropdownMenuLabel>
 						<DropdownMenuSeparator />
-						<DropdownMenuItem className=" rounded flex gap-2   text-muted-foreground hover:text-foreground p-1.5  items-center mt-1.5">
+						<DropdownMenuItem className=" flex gap-2   text-muted-foreground hover:text-foreground  cursor-pointer  items-center mt-1.5">
 							<span className=" flex items-center justify-center">
 								<User className=" h-6 w-6 p-0.5" />
 							</span>
-							<span className="  "> Profile</span>
+							<span className=" "> Profile</span>
 						</DropdownMenuItem>
-						<DropdownMenuItem className=" rounded flex gap-2   text-muted-foreground hover:text-foreground p-1.5  items-center mt-1.5">
+						<DropdownMenuItem className=" flex gap-2   text-muted-foreground hover:text-foreground  cursor-pointer  items-center mt-1.5">
 							<span className=" flex items-center justify-center">
 								<Settings className=" h-6 w-6 p-0.5" />
 							</span>
-							<span className="  "> Setting</span>
+							<span className=" "> Setting</span>
 						</DropdownMenuItem>
-						<DropdownMenuItem className=" rounded flex gap-2   text-muted-foreground hover:text-foreground p-1.5  items-center mt-1.5">
+
+						<ModeToggle />
+
+						<DropdownMenuItem
+							onClick={() => signOut()}
+							className="text-destructive flex gap-2   hover:bg-destructive  cursor-pointer  items-center mt-1.5"
+						>
 							<span className=" flex items-center justify-center">
-								<MoonStar className=" h-6 w-6 p-0.5" />
+								<LogOut className=" h-6 w-6 p-0.5  text-destructive" />
 							</span>
-							<span className="  ">Dark Mode</span>
-							<ModeToggle />
+							<span className=" text-destructive">Log Out</span>
 						</DropdownMenuItem>
 					</DropdownMenuContent>
 				</DropdownMenu>

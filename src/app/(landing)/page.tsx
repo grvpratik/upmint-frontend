@@ -36,9 +36,7 @@ const LandingPage = async () => {
 						<span className="text-xs bg-orange-600 rounded-full  text-white px-2 aspect-square py-1 mr-3 font-semibold">
 							P
 						</span>{" "}
-						<span className="text-sm font-medium">
-							Vote us on Producthunt
-						</span>
+						<span className="text-sm font-medium">Vote us on Producthunt</span>
 						<svg
 							className="ml-2 w-4 h-4"
 							fill="currentColor"
@@ -77,7 +75,7 @@ const LandingPage = async () => {
 						view plans
 					</Button>
 				</span>
-				
+
 				{/* <ModeToggle /> */}
 			</main>
 			<main className=" root-container flex flex-col">
