@@ -5,7 +5,7 @@ import { BitcoinSVG, EthereumSVG, SolanaSVG } from "../svg/icon";
 import { usePathname } from "next/navigation";
 const NavLinks = () => {
 	const pathname = usePathname();
-	console.log(pathname)
+	
 	return (
 		<div className="lg:flex gap-2 text-sm font-bold   leading-none hidden *:flex *:items-center *:gap-1 *:px-2 *:py-1.5   *:rounded-full ">
 			<Link

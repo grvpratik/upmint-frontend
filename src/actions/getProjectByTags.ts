@@ -25,7 +25,7 @@ const getProjectbyTags = async ({
 				"Cache-Control": "no-store",
 			},
 		});
-		console.log(res.data);
+	
 		// Check if the response status is in the 2xx range (indicating success)
 		if (res.status < 200 || res.status >= 300) {
 			throw new Error(`HTTP error! Status: ${res.status}`);
