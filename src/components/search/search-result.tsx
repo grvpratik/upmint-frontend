@@ -3,10 +3,6 @@ import React, { useState } from "react";
 
 import SearchInput from "./search-input";
 
-import { useQuery } from "@tanstack/react-query";
-import getProjects from "src/actions/getProjects";
-
-import { ScrollArea } from "../ui/scroll-area";
 import {
 	Tabs,
 	TabsContent,

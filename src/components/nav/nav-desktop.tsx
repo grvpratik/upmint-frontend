@@ -2,7 +2,7 @@ import Link from "next/link";
 import React from "react";
 import { Search } from "lucide-react";
 
-import { ScrollArea } from "src/components/ui/scroll-area";
+
 
 import {
 	Dialog,
@@ -12,10 +12,9 @@ import {
 	DialogTitle,
 	DialogTrigger,
 } from "src/components/ui/dialog";
-import SearchResult from "../Search/search-result";
+import SearchResult from "src/components/Search/search-result";
 import NavLinks from "./nav-links";
-import { Button } from "../ui/button";
-import { signIn } from "next-auth/react";
+
 import ProfileDropdown from "../ui/profile-dropdown";
 const NavDesktop = () => {
 	return (

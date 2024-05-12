@@ -12,8 +12,8 @@ import {
 } from "src/components/ui/sheet";
 
 
-import SearchResult from "../Search/search-result";
-import ProfileDropdown from "../ui/profile-dropdown";
+import SearchResult from "src/components/Search/search-result";
+import ProfileDropdown from "src/components/ui/profile-dropdown";
 
 const NavMobile = () => {
 	return (
@@ -22,16 +22,40 @@ const NavMobile = () => {
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					className="h-7 w-7"
-					viewBox="0 0 20 20"
+					fill="#000"
+					version="1.1"
+					viewBox="0 0 512 512"
+					xmlSpace="preserve"
 				>
 					<g>
-						<g fill="currentColor" fillRule="evenodd" stroke="currentColor" strokeWidth="1">
-							<g fill="currentColor" transform="translate(-60 -4559)">
-								<g transform="translate(56 160)">
-									<path d="M6.702 4412.072l5.397-7.986a.5.5 0 01.901.298v11.05a.5.5 0 01-.753.433l-5.397-3.065a.5.5 0 01-.148-.73zm14.447.73l-5.396 3.065a.5.5 0 01-.753-.432v-11.051a.5.5 0 01.901-.298l5.397 7.986a.5.5 0 01-.149.73zM15 4399.526a1.214 1.214 0 00-2 0l-8.76 12.504a1.214 1.214 0 00.36 1.772l8.4 4.824.423.228c.36.194.793.194 1.153 0l.424-.228 8.4-4.824a1.215 1.215 0 00.36-1.772L15 4399.526z"></path>
-								</g>
-							</g>
-						</g>
+						<path
+							fill="#FFB04C"
+							d="M0 163.947L257.322 152.508 512 163.947 256 462.792z"
+						></path>
+						<path
+							fill="#FFDB6C"
+							d="M512 163.947L0 163.947 81.714 49.208 430.286 49.208z"
+						></path>
+						<path
+							fill="#FFC866"
+							d="M430.286 49.208L430.286 163.947 512 163.947z"
+						></path>
+						<path
+							fill="#F7A05E"
+							d="M429.83 164.73L256 462.792l253.767-296.238c.877-1.025.15-2.607-1.2-2.607h-77.374c-.561 0-1.081.298-1.363.783z"
+						></path>
+						<path
+							fill="#FFDB6C"
+							d="M81.714 49.208L430.286 49.208 256 462.792z"
+						></path>
+						<path
+							fill="#FFF2BB"
+							d="M381.935 163.947L430.286 49.208 81.714 49.208 130.065 163.947z"
+						></path>
+						<path
+							fill="#FFEB8A"
+							d="M130.065 163.947L256 49.208 381.935 163.947z"
+						></path>
 					</g>
 				</svg>
 
@@ -51,8 +75,7 @@ const NavMobile = () => {
 						<SearchResult />
 					</SheetContent>
 				</Sheet>
-<ProfileDropdown/>
-				
+				<ProfileDropdown />
 			</div>
 		</>
 	);
