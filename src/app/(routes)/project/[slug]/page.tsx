@@ -8,7 +8,7 @@ const ProjectDetailsPage = async ({ params }: { params: { slug: string } }) => {
 	const data = await getProjectDetails(params.slug);
 	if (!data) return notFound();
 	return (
-		<div className=" flex flex-col my-2 lg:my-0  root-container  gap-2">
+		<div className=" flex flex-col my-2 lg:my-0  root-container gap-1 lg:gap-2">
 			<div className=" relative w-full md:h-48 rounded-xl overflow-hidden  h-24 aspect-video">
 				<Image src={data.bannerUrl} alt="" fill className=" object-cover" />
 			</div>
@@ -24,10 +24,10 @@ const ProjectDetailsPage = async ({ params }: { params: { slug: string } }) => {
 							/>
 						</div>
 						<div className=" flex flex-col gap-1">
-							<div className=" text-lg font-semibold md:text-xl md:font-bold tracking-wider leading-none">
+							<div className=" text-lg font-semibold md:text-xl md:font-bold tracking-wider leading-none  line-clamp-1">
 								{data.name}
 							</div>
-							<div className="  leading-none">{data.nameSlug}</div>
+							<div className="  leading-none line-clamp-1">{data.nameSlug}</div>
 						</div>
 						<div className="ml-auto flex gap-3 p-2  items-center rounded-md bg-accent  backdrop-blur-md">
 							{" "}
