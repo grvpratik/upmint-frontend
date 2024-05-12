@@ -5,15 +5,13 @@ import { Search } from "lucide-react";
 import {
 	Sheet,
 	SheetContent,
-	SheetDescription,
-	SheetHeader,
-	SheetTitle,
+
 	SheetTrigger,
 } from "src/components/ui/sheet";
 
-
-import SearchResult from "src/components/Search/search-result";
+import SearchOutput from "src/components/Search/search-output";
 import ProfileDropdown from "src/components/ui/profile-dropdown";
+
 
 const NavMobile = () => {
 	return (
@@ -72,7 +70,7 @@ const NavMobile = () => {
 						</div>
 					</SheetTrigger>
 					<SheetContent className="flex flex-col w-full ">
-						<SearchResult />
+						<SearchOutput />
 					</SheetContent>
 				</Sheet>
 				<ProfileDropdown />

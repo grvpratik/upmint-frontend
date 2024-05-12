@@ -2,8 +2,6 @@ import Link from "next/link";
 import React from "react";
 import { Search } from "lucide-react";
 
-
-
 import {
 	Dialog,
 	DialogContent,
@@ -12,10 +10,11 @@ import {
 	DialogTitle,
 	DialogTrigger,
 } from "src/components/ui/dialog";
-import SearchResult from "src/components/Search/search-result";
+
 import NavLinks from "./nav-links";
 
 import ProfileDropdown from "../ui/profile-dropdown";
+import SearchOutput from "src/components/Search/search-output";
 const NavDesktop = () => {
 	return (
 		<nav className=" top-0 sticky w-full px-4 h-16 items-center hidden lg:block  lg:px-16 z-40  bg-background ">
@@ -80,7 +79,7 @@ const NavDesktop = () => {
 						</DialogTrigger>
 						<DialogContent className=" h-screen  rounded-3xl  overflow-hidden p-0  ">
 							<div className="w-full">
-								<SearchResult />
+								<SearchOutput />
 							</div>
 						</DialogContent>
 					</Dialog>
@@ -89,8 +88,6 @@ const NavDesktop = () => {
 					<Link href="/blogs">Resources</Link>
 					<Link href="/blogs">Blogs</Link>
 					<ProfileDropdown />
-						
-					
 				</div>
 			</div>
 		</nav>

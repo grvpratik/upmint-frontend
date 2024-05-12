@@ -13,7 +13,7 @@ import NftResults from "./nft-results";
 import PostResults from "./post-results";
 import SearchFeatured from "./search-featured";
 
-const SearchResult = () => {
+const SearchOutput = () => {
 	const [searchValue, setSearchValue] = useState<string>("");
 
 	return (
@@ -48,4 +48,4 @@ const SearchResult = () => {
 	);
 };
 
-export default SearchResult;
+export default SearchOutput;
