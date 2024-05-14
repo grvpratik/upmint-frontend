@@ -26,7 +26,7 @@ const LandingPage = async () => {
 			<NavMobile />
 			<NavDesktop />
 
-			<main className="flex flex-col py-32 p-4 rounded-lg root-container gap-4 relative ">
+			<main className="flex flex-col py-12 lg:py-32 p-4 rounded-lg root-container gap-4 relative ">
 				<span>
 					<Link
 						href="#"
