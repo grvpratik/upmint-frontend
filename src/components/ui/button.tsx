@@ -5,7 +5,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "src/lib/utils";
 
 const buttonVariants = cva(
-	"inline-flex items-center justify-center whitespace-nowrap  transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none  rounded-lg   shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none font-medium ring-offset-background  focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 ",
+	"inline-flex items-center duration-200 justify-center whitespace-nowrap  transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none  rounded-lg   shadow-[0px_2px_0px_0px_#FFFFFF40_inset]  focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none font-medium ring-offset-background  focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 ",
 	{
 		variants: {
 			variant: {
@@ -57,3 +57,6 @@ Button.displayName = "Button";
 export { Button, buttonVariants };
 // depth effect button
 // "inline-flex items-center duration-200 justify-center whitespace-nowrap  transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none  rounded-lg   shadow-[0px_2px_0px_0px_#FFFFFF40_inset]  focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none font-medium ring-offset-background  focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 ",
+
+//base
+//inline-flex items-center justify-center whitespace-nowrap  transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none  rounded-lg   shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none font-medium ring-offset-background  focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 

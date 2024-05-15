@@ -28,7 +28,7 @@ const SearchCardNft = ({
 		<Link className="my-0.5" href={`/mints/${slug}`}>
 			<Card className=" rounded-sm ">
 				<CardContent className="flex items-center gap-2 py-2 px-1 hover:bg-accent  overflow-hidden ">
-					<Avatar className="rounded-sm lg:h-10 lg:w-10  flex-shrink-0">
+					<Avatar className="rounded-sm lg:h-8 lg:w-8  flex-shrink-0">
 						<AvatarImage src={imageUrl} />
 						<AvatarFallback>{name}</AvatarFallback>
 					</Avatar>

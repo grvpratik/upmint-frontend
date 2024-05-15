@@ -28,7 +28,7 @@ const ProfileDropdown = () => {
 					</span>
 					<Button
 						variant="default"
-						className="-full  py-5 px-8 hidden lg:flex"
+						className="-full dark:text-white  py-5 px-8 hidden lg:flex"
 						onClick={() => signIn("twitter")}
 					>
 						Sign up

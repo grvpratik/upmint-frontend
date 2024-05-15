@@ -86,7 +86,7 @@ const NftTags = ({
 							{/* Separator between default tabs and tag tabs */}
 							<Separator orientation="vertical" className="h-6 " />
 							{/* Mapping through tagArray to display custom tags */}
-							{tagArray &&
+							{tagArray.length>0 &&
 								tagArray.map((tag: TagsProps) => (
 									<TabsTrigger
 										key={tag.id}
