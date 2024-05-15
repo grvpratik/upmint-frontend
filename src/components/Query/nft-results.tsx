@@ -28,7 +28,7 @@ const SearchCardNft = ({
 		<Link className="my-0.5" href={`/mints/${slug}`}>
 			<Card className=" rounded-sm ">
 				<CardContent className="flex items-center gap-2 py-2 px-1 hover:bg-accent  overflow-hidden ">
-					<Avatar className="rounded-sm lg:h-8 lg:w-8  flex-shrink-0">
+					<Avatar className="rounded-sm lg:h-10 lg:w-10  flex-shrink-0">
 						<AvatarImage src={imageUrl} />
 						<AvatarFallback>{name}</AvatarFallback>
 					</Avatar>
@@ -77,7 +77,7 @@ const NftResults = ({ searchValue }: { searchValue: string }) => {
 				<div className="gap-2 flex  flex-col">
 					{Array.from({ length: 5 }).map((_, index) => (
 						<div key={index} className="flex items-center space-x-4">
-							<Skeleton className="h-12 w-12 rounded-2xl bg-accent" />
+							<Skeleton className="h-10 w-10 rounded-2xl bg-accent" />
 							<div className="space-y-2">
 								<Skeleton className="h-4 w-[450px] bg-accent" />
 								<Skeleton className="h-4 w-[400px] bg-accent" />
