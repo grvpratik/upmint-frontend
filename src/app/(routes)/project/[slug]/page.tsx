@@ -27,7 +27,7 @@ const ProjectDetailsPage = async ({ params }: { params: { slug: string } }) => {
 							<div className=" text-lg font-semibold md:text-xl md:font-bold tracking-wider leading-none  line-clamp-1">
 								{data.name}
 							</div>
-							<div className="  leading-none line-clamp-1">{data.nameSlug}</div>
+							<div className="  text-xs leading-none line-clamp-1">{data.nameSlug}</div>
 						</div>
 						<div className="ml-auto flex gap-3 p-2  items-center rounded-md bg-accent  backdrop-blur-md">
 							{" "}
