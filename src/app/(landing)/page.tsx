@@ -12,7 +12,7 @@ import {
 import { landingContent as content } from "src/lib/site.info";
 import { Button } from "src/components/ui/button";
 import getTags from "src/actions/getTags";
-import getProjects, { data } from "src/actions/getProjects";
+import getProjects from "src/actions/getProjects";
 
 import Link from "next/link";
 const LandingPage = async () => {
@@ -105,7 +105,7 @@ const LandingPage = async () => {
 						</TabsTrigger>
 					</TabsList>
 					<TabsContent value="Nfts">
-						<NftTags tagArray={tags} projectArray={data} />
+						<NftTags tagArray={tags} projectArray={projectArray} />
 					</TabsContent>
 
 					<TabsContent value="Coins">Change your Coins here.</TabsContent>
