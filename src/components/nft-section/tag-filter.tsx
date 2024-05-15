@@ -39,29 +39,29 @@ const NftTags = ({
 	const [tabValue, setTabValue] = React.useState<string>("");
 	const [projectsByTag, setProjectsByTag] = React.useState(projectArray || []);
 
-	// React Query hook for fetching data based on tag value
-	// const { isLoading, error } = useQuery({
-	// 	queryKey: ["tags", tabValue],
-	// 	queryFn: async () => {
-	// 		// Fetch projects based on tag value and blockchain
-	// 		const network = blockchain;
-	// 		const query = { network };
-	// 		try {
-	// 			let result;
-	// 			// Fetch projects based on blockchain type
-	// 			if (blockchain === "all") {
-	// 				result = await getProjects({});
-	// 			} else {
-	// 				result = await getProjects(query);
-	// 			}
-	// 			// Update projects by tag
-	// 			setProjectsByTag(result.result || []);
-	// 		} catch (error) {
-	// 			console.error("Error fetching data:", error);
-	// 			return []; // Return empty array in case of error
-	// 		}
-	// 	},
-	// });
+	
+	const { isLoading, error } = useQuery({
+		queryKey: ["tags", tabValue],
+		queryFn: async () => {
+			// Fetch projects based on tag value and blockchain
+			const network = blockchain;
+			const query = { network };
+			try {
+				let result;
+				// Fetch projects based on blockchain type
+				if (blockchain === "all") {
+					result = await getProjects({});
+				} else {
+					result = await getProjects(query);
+				}
+				// Update projects by tag
+				setProjectsByTag(result.result || []);
+			} catch (error) {
+				console.error("Error fetching data:", error);
+				return []; // Return empty array in case of error
+			}
+		},
+	});
 
 	return (
 		<>
@@ -103,7 +103,7 @@ const NftTags = ({
 				</Tabs>
 				{/* Component to display NFT list based on selected tag */}
 
-				<NftsList projectsByTag={projectsByTag} cardLoading={false} />
+				<NftsList projectsByTag={projectsByTag} cardLoading={isLoading} />
 			{/* </div> */}
 		</>
 	);

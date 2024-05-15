@@ -46,27 +46,26 @@ const SearchCardNft = ({
 
 const NftResults = ({ searchValue }: { searchValue: string }) => {
 	const [SearchResult, setSearchResult] = React.useState([]);
-	// const { isLoading, error } = useQuery({
-	// 	queryKey: ["search", searchValue],
-	// 	queryFn: async () => {
-	// 		if (!searchValue) return []; // Return an empty array if searchValue is empty
+	const { isLoading, error } = useQuery({
+		queryKey: ["search", searchValue],
+		queryFn: async () => {
+			if (!searchValue) return []; // Return an empty array if searchValue is empty
 
-	// 		try {
-	// 			const result = await getProjects({
-	// 				search: searchValue,
-	// 				size: 10,
-	// 			});
+			try {
+				const result = await getProjects({
+					search: searchValue,
+					size: 10,
+				});
 
-	// 			setSearchResult(result.result || []); // Set search result, ensure result is an array
-	// 			return result;
-	// 		} catch (error) {
-	// 			console.error("Error fetching data:", error);
-	// 			return []; // Throw the error so that it's caught by the error handler
-	// 		}
-	// 	},
-	// });
-	const error = false
-	const isLoading=false
+				setSearchResult(result.result || []); // Set search result, ensure result is an array
+				return result;
+			} catch (error) {
+				console.error("Error fetching data:", error);
+				return []; // Throw the error so that it's caught by the error handler
+			}
+		},
+	});
+	
 	return (
 		<>
 			{/* {error && <div>Error fetching data: {error.message}</div>} */}

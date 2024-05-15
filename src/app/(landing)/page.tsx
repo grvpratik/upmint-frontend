@@ -59,7 +59,7 @@ const LandingPage = async () => {
 				<p className=" lg:font-semibold text-sm lg:text-base text-muted-foreground text-balance max-w-screen-sm ">
 					{content.description}
 				</p>
-				<span className=" flex lg:flex-row flex-col gap-4">
+				<span className=" flex md:flex-row flex-col gap-4">
 					<Button
 						className=" lg:text-lg font-semibold"
 						size="lg"
