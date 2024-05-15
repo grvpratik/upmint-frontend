@@ -52,3 +52,4 @@ const NftsList = ({ projectsByTag, cardLoading }: NftListProps) => {
 };
 
 export default NftsList;
+ 

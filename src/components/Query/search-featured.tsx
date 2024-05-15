@@ -5,5 +5,5 @@ const SearchFeatured = () => {
     <div>SearchFeatured</div>
   )
 }
-
+ 
 export default SearchFeatured

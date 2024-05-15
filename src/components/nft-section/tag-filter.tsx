@@ -39,7 +39,7 @@ const NftTags = ({
 	const [tabValue, setTabValue] = React.useState<string>("");
 	const [projectsByTag, setProjectsByTag] = React.useState(projectArray || []);
 
-
+ 
 	const { isLoading, error } = useQuery({
 		queryKey: ["tags", tabValue],
 		queryFn: async () => {

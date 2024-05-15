@@ -37,7 +37,7 @@ const NftCard = ({ name, bannerUrl, imageUrl }: NftCardProps) => {
 					</span> */}
 				</div>
 			</div>
-		</div>
+		</div> 
 	);
 };
 

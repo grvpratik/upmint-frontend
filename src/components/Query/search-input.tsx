@@ -33,5 +33,5 @@ const SearchInput = ({ setSearch }: { setSearch: (value: string) => void }) => {
 		</div>
 	);
 };
-
+ 
 export default SearchInput;

@@ -66,7 +66,7 @@ const NftResults = ({ searchValue }: { searchValue: string }) => {
 		},
 	});
 	
-	return (
+	return ( 
 		<>
 			{/* {error && <div>Error fetching data: {error.message}</div>} */}
 			{searchValue.length > 0 &&
