@@ -16,8 +16,8 @@ import { Button } from "../ui/button";
 interface NftTagsProps {
 	blockchain?: string;
 	tagArray: any;
-	// projectArray: Project[];
-	projectArray: any;
+	projectArray: Project[];
+	
 }
 // Defining the type for tags
 interface TagsProps {
@@ -39,7 +39,7 @@ const NftTags = ({
 	const [tabValue, setTabValue] = React.useState<string>("");
 	const [projectsByTag, setProjectsByTag] = React.useState(projectArray || []);
 
-	
+
 	const { isLoading, error } = useQuery({
 		queryKey: ["tags", tabValue],
 		queryFn: async () => {
@@ -62,7 +62,7 @@ const NftTags = ({
 			}
 		},
 	});
-
+console.log(error)
 	return (
 		<>
 			{" "}
@@ -86,7 +86,7 @@ const NftTags = ({
 							{/* Separator between default tabs and tag tabs */}
 							<Separator orientation="vertical" className="h-6 " />
 							{/* Mapping through tagArray to display custom tags */}
-							{tagArray.length>0 &&
+							{tagArray.length &&
 								tagArray.map((tag: TagsProps) => (
 									<TabsTrigger
 										key={tag.id}
