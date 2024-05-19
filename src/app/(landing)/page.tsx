@@ -16,6 +16,7 @@ import getTags from "src/actions/getTags";
 import getProjects from "src/actions/getProjects";
 
 import Link from "next/link";
+import LandingImages from "src/components/landing-image";
 const LandingPage = async () => {
 	const tags = await getTags();
 	const projectArray = await getProjects({});
@@ -28,6 +29,7 @@ const LandingPage = async () => {
 			<NavDesktop />
 
 			<main className="flex flex-col py-12 lg:py-32 p-4 rounded-lg root-container gap-4 relative ">
+				<LandingImages/>
 				<span>
 					<Link
 						href="#"

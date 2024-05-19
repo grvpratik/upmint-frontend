@@ -4,13 +4,13 @@ import React from "react";
 import { Search } from "lucide-react";
 import { Sheet, SheetContent, SheetTrigger } from "src/components/ui/sheet";
 
-import SearchOutput from "src/components/Query/search-output";
+import SearchOutput from "src/components/query/search-output";
 import ProfileDropdown from "src/components/ui/profile-dropdown";
 
 const NavMobile = () => {
 	return (
 		<>
-			<div className="flex top-0  z-50  sticky  gap-3 items-center pt-2  root-container lg:hidden bg-background">
+			<div className="flex top-0  z-50  sticky  gap-3 items-center py-2  root-container lg:hidden bg-background">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					className="h-7 w-7"

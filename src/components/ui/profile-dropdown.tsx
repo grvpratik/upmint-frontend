@@ -23,12 +23,67 @@ const ProfileDropdown = () => {
 		<>
 			{!session && status === "unauthenticated" && (
 				<>
-					<span className=" items-center-full p-1 flex lg:hidden">
-						<MenuSVG className="h-5 w-5" />
-					</span>
+					<div className=" lg:hidden">
+						<DropdownMenu>
+							<DropdownMenuTrigger className="rounded-full p-0.5">
+								<span className=" items-center-full p-1 flex lg:hidden">
+									<MenuSVG className="h-5 w-5" />
+								</span>
+							</DropdownMenuTrigger>
+							<DropdownMenuContent
+								className=" p-2 font-semibold text-sm"
+								side="bottom"
+								align="end"
+								sideOffset={10}
+							>
+								<DropdownMenuLabel className="px-0">
+									<Button
+										variant="default"
+										className="w-full rounded-sm dark:text-white  py-3 px-4 flex"
+										onClick={() => signIn("twitter")}
+									>
+										Sign up
+									</Button>
+								</DropdownMenuLabel>
+								<DropdownMenuSeparator />
+								<DropdownMenuItem className=" flex gap-2   text-muted-foreground hover:text-foreground  cursor-pointer  items-center mt-1.5">
+									<span className=" flex items-center justify-center">
+										<User className=" h-6 w-6 p-0.5" />
+									</span>
+									<span className=" "> Profile</span>
+								</DropdownMenuItem>
+								<DropdownMenuItem className=" flex gap-2   text-muted-foreground hover:text-foreground  cursor-pointer  items-center mt-1.5">
+									<span className=" flex items-center justify-center">
+										<Settings className=" h-6 w-6 p-0.5" />
+									</span>
+									<span className=" "> Setting</span>
+								</DropdownMenuItem>
+
+								<ModeToggle />
+
+								<DropdownMenuItem
+									onClick={() => signOut()}
+									className="text-destructive flex gap-2   hover:bg-destructive  cursor-pointer  items-center mt-1.5"
+								>
+									<span className=" flex items-center justify-center">
+										<LogOut className=" h-6 w-6 p-0.5  hover:text-white text-destructive" />
+									</span>
+									<span className=" text-destructive hover:text-white">
+										Log Out
+									</span>
+								</DropdownMenuItem>
+								<DropdownMenuSeparator />
+								<div className="py-1 px-2 flex font-bold  text-xs justify-between  text-muted-foreground items-center">
+									<span>Term</span>
+									<span>About us</span>
+								</div>
+							</DropdownMenuContent>
+						</DropdownMenu>
+					</div>
+
 					<Button
 						variant="default"
-						className="-full dark:text-white  py-5 px-8 hidden lg:flex"
+						className="rounded-full dark:text-white  py-4 px-6 hidden lg:flex"
 						onClick={() => signIn("twitter")}
 					>
 						Sign up
@@ -42,7 +97,7 @@ const ProfileDropdown = () => {
 			{session?.user && status === "authenticated" && (
 				<DropdownMenu>
 					<DropdownMenuTrigger className="rounded-full p-0.5">
-						<Avatar className=" ">
+						<Avatar>
 							<AvatarImage
 								src={session?.user.image || ""}
 								alt={session?.user.name || "user"}
@@ -100,6 +155,11 @@ const ProfileDropdown = () => {
 							</span>
 							<span className=" text-destructive">Log Out</span>
 						</DropdownMenuItem>
+						<DropdownMenuSeparator />
+						<div className="py-1 px-2 flex font-bold  text-xs justify-between  text-muted-foreground items-center">
+							<span>Term</span>
+							<span>About us</span>
+						</div>
 					</DropdownMenuContent>
 				</DropdownMenu>
 			)}
