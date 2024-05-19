@@ -4,7 +4,7 @@ import React from "react";
 import { Search } from "lucide-react";
 import { Sheet, SheetContent, SheetTrigger } from "src/components/ui/sheet";
 
-import SearchOutput from "src/components/query/search-output";
+import SearchOutput from "src/components/search-expo/search-output";
 import ProfileDropdown from "src/components/ui/profile-dropdown";
 
 const NavMobile = () => {
