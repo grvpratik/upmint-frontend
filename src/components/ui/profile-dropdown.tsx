@@ -17,21 +17,23 @@ import { MenuSVG } from "../svg/icon";
 import { LogOut, MoonStar, Settings, User } from "lucide-react";
 import { ModeToggle } from "../theme-toggle";
 import { Skeleton } from "./skeleton";
+
 const ProfileDropdown = () => {
 	const { data: session, status } = useSession();
+
 	return (
 		<>
 			{!session && status === "unauthenticated" && (
 				<>
-					<div className=" lg:hidden">
+					<div className="lg:hidden">
 						<DropdownMenu>
-							<DropdownMenuTrigger className="rounded-full p-0.5">
-								<span className=" items-center-full p-1 flex lg:hidden">
+							<DropdownMenuTrigger className="rounded-full p-1">
+								<span className="flex items-center p-1">
 									<MenuSVG className="h-5 w-5" />
 								</span>
 							</DropdownMenuTrigger>
 							<DropdownMenuContent
-								className=" p-2 font-semibold text-sm"
+								className="p-2 text-sm font-semibold"
 								side="bottom"
 								align="end"
 								sideOffset={10}
@@ -39,51 +41,42 @@ const ProfileDropdown = () => {
 								<DropdownMenuLabel className="px-0">
 									<Button
 										variant="default"
-										className="w-full rounded-sm dark:text-white  py-3 px-4 flex"
+										className="w-full py-3 px-4 rounded-sm dark:text-white"
 										onClick={() => signIn("twitter")}
 									>
 										Sign up
 									</Button>
 								</DropdownMenuLabel>
 								<DropdownMenuSeparator />
-								<DropdownMenuItem className=" flex gap-2   text-muted-foreground hover:text-foreground  cursor-pointer  items-center mt-1.5">
-									<span className=" flex items-center justify-center">
-										<User className=" h-6 w-6 p-0.5" />
-									</span>
-									<span className=" "> Profile</span>
+								<DropdownMenuItem className="flex items-center gap-2 mt-1.5 text-muted-foreground hover:text-foreground cursor-pointer">
+									<User className="h-6 w-6 p-0.5" />
+									<span>Profile</span>
 								</DropdownMenuItem>
-								<DropdownMenuItem className=" flex gap-2   text-muted-foreground hover:text-foreground  cursor-pointer  items-center mt-1.5">
-									<span className=" flex items-center justify-center">
-										<Settings className=" h-6 w-6 p-0.5" />
-									</span>
-									<span className=" "> Setting</span>
+								<DropdownMenuItem className="flex items-center gap-2 mt-1.5 text-muted-foreground hover:text-foreground cursor-pointer">
+									<Settings className="h-6 w-6 p-0.5" />
+									<span>Setting</span>
 								</DropdownMenuItem>
-
 								<ModeToggle />
-
 								<DropdownMenuItem
 									onClick={() => signOut()}
-									className="text-destructive flex gap-2   hover:bg-destructive  cursor-pointer  items-center mt-1.5"
+									className="flex items-center gap-2 mt-1.5 text-destructive hover:bg-destructive cursor-pointer"
 								>
-									<span className=" flex items-center justify-center">
-										<LogOut className=" h-6 w-6 p-0.5  hover:text-white text-destructive" />
-									</span>
-									<span className=" text-destructive hover:text-white">
+									<LogOut className="h-6 w-6 p-0.5 text-destructive hover:text-white" />
+									<span className="text-destructive hover:text-white">
 										Log Out
 									</span>
 								</DropdownMenuItem>
 								<DropdownMenuSeparator />
-								<div className="py-1 px-2 flex font-bold  text-xs justify-between  text-muted-foreground items-center">
-									<span>Term</span>
+								<div className="flex justify-between items-center py-1 px-2 text-xs font-bold text-muted-foreground">
+									<span>Terms</span>
 									<span>About us</span>
 								</div>
 							</DropdownMenuContent>
 						</DropdownMenu>
 					</div>
-
 					<Button
 						variant="default"
-						className="rounded-full dark:text-white  py-4 px-6 hidden lg:flex"
+						className="hidden lg:flex py-1.5 px-4  dark:text-white"
 						onClick={() => signIn("twitter")}
 					>
 						Sign up
@@ -93,7 +86,6 @@ const ProfileDropdown = () => {
 			{status === "loading" && (
 				<Skeleton className="h-10 w-10 rounded-full overflow-hidden" />
 			)}
-
 			{session?.user && status === "authenticated" && (
 				<DropdownMenu>
 					<DropdownMenuTrigger className="rounded-full p-0.5">
@@ -106,13 +98,13 @@ const ProfileDropdown = () => {
 						</Avatar>
 					</DropdownMenuTrigger>
 					<DropdownMenuContent
-						className=" p-2 font-semibold text-sm"
+						className="p-2 text-sm font-semibold"
 						side="bottom"
 						align="end"
 						sideOffset={10}
 					>
 						<DropdownMenuLabel>
-							<div className=" flex gap-2 items-center ">
+							<div className="flex items-center gap-2">
 								<Avatar className="lg:h-11 lg:w-11">
 									<AvatarImage
 										src={session?.user.image || ""}
@@ -121,43 +113,35 @@ const ProfileDropdown = () => {
 									<AvatarFallback>U</AvatarFallback>
 								</Avatar>
 								<span className="flex flex-col gap-1">
-									<span className="  text-base font-semibold leading-none line-clamp-1">
+									<span className="text-base font-semibold leading-none line-clamp-1">
 										{session?.user.name}
 									</span>
-									<span className="  text-muted-foreground  leading-none line-clamp-1">
+									<span className="text-muted-foreground leading-none line-clamp-1">
 										{session.user.email || "email@address"}
 									</span>
 								</span>
 							</div>
 						</DropdownMenuLabel>
 						<DropdownMenuSeparator />
-						<DropdownMenuItem className=" flex gap-2   text-muted-foreground hover:text-foreground  cursor-pointer  items-center mt-1.5">
-							<span className=" flex items-center justify-center">
-								<User className=" h-6 w-6 p-0.5" />
-							</span>
-							<span className=" "> Profile</span>
+						<DropdownMenuItem className="flex items-center gap-2 mt-1.5 text-muted-foreground hover:text-foreground cursor-pointer">
+							<User className="h-6 w-6 p-0.5" />
+							<span>Profile</span>
 						</DropdownMenuItem>
-						<DropdownMenuItem className=" flex gap-2   text-muted-foreground hover:text-foreground  cursor-pointer  items-center mt-1.5">
-							<span className=" flex items-center justify-center">
-								<Settings className=" h-6 w-6 p-0.5" />
-							</span>
-							<span className=" "> Setting</span>
+						<DropdownMenuItem className="flex items-center gap-2 mt-1.5 text-muted-foreground hover:text-foreground cursor-pointer">
+							<Settings className="h-6 w-6 p-0.5" />
+							<span>Setting</span>
 						</DropdownMenuItem>
-
 						<ModeToggle />
-
 						<DropdownMenuItem
 							onClick={() => signOut()}
-							className="text-destructive flex gap-2   hover:bg-destructive  cursor-pointer  items-center mt-1.5"
+							className="flex items-center gap-2 mt-1.5 text-destructive hover:bg-destructive cursor-pointer"
 						>
-							<span className=" flex items-center justify-center">
-								<LogOut className=" h-6 w-6 p-0.5  text-destructive" />
-							</span>
-							<span className=" text-destructive">Log Out</span>
+							<LogOut className="h-6 w-6 p-0.5 text-destructive" />
+							<span className="text-destructive">Log Out</span>
 						</DropdownMenuItem>
 						<DropdownMenuSeparator />
-						<div className="py-1 px-2 flex font-bold  text-xs justify-between  text-muted-foreground items-center">
-							<span>Term</span>
+						<div className="flex justify-between items-center py-1 px-2 text-xs font-bold text-muted-foreground">
+							<span>Terms</span>
 							<span>About us</span>
 						</div>
 					</DropdownMenuContent>

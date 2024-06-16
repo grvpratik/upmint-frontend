@@ -65,7 +65,7 @@ const NavDesktop = () => {
 					<Dialog>
 						<DialogTrigger className=" w-full flex-1">
 							<div className=" rounded-full group flex justify-between  items-center bg-accentx bg-input/70  fshadow-inner transition-background  hover:bg-border cursor-poy ">
-								<div className="flex w-full gap-1.5 py-2.5 pl-3.5 items-center ">
+								<div className="flex w-full gap-1.5 py-2 pl-2.5 items-center ">
 									{" "}
 									<Search className="h-4 ml-1  w-4 text-foreground/70" />
 									<div className=" text-muted-foreground font-semibold line-clamp-1   text-sm leading-relaxed tracking-wide">

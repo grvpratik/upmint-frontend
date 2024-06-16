@@ -66,7 +66,7 @@ const NftResults = ({ searchValue }: { searchValue: string }) => {
 		},
 	});
 	
-	return ( 
+	return (
 		<>
 			{/* {error && <div>Error fetching data: {error.message}</div>} */}
 			{searchValue.length > 0 &&
@@ -79,8 +79,8 @@ const NftResults = ({ searchValue }: { searchValue: string }) => {
 						<div key={index} className="flex items-center space-x-4">
 							<Skeleton className="h-10 w-10 rounded-2xl bg-accent" />
 							<div className="space-y-2">
-								<Skeleton className="h-4 w-[450px] bg-accent" />
-								<Skeleton className="h-4 w-[400px] bg-accent" />
+								<Skeleton className="h-4 w-[250px] lg:w-[450px] bg-accent" />
+								<Skeleton className="h-4  w-[250px] lg:w-[400px] bg-accent" />
 							</div>
 						</div>
 					))}

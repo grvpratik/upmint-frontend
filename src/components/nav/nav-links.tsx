@@ -7,10 +7,10 @@ const NavLinks = () => {
 	const pathname = usePathname();
 	
 	return (
-		<div className="lg:flex gap-2 text-sm font-bold   leading-none hidden *:flex *:items-center *:gap-1 *:px-2 *:py-1.5   *:rounded-full ">
+		<div className="lg:grid gap-2 text-sm font-bold   leading-none  grid-flow-col text-center  bg-accent  rounded-lg p-1 hidden *:flex *:items-center *:gap-1 *:px-2 *:py-1.5    *:rounded-full ">
 			<Link
 				href={"/explore/solana"}
-				className=" flex items-center gap-1 hover:bg-accent transition"
+				className=" flex items-center gap-1 hover:bg-background hover:shadow-sm transition"
 			>
 				<span>SOL</span>
 				<span>
@@ -19,7 +19,7 @@ const NavLinks = () => {
 			</Link>
 			<Link
 				href={"/explore/ethereum"}
-				className=" flex items-center gap-1 hover:bg-accent transition"
+				className=" flex items-center gap-1 hover:bg-background hover:shadow-sm transition"
 			>
 				<span>ETH</span>
 				<span>
@@ -28,7 +28,7 @@ const NavLinks = () => {
 			</Link>
 			<Link
 				href={"/explore/bitcoin"}
-				className=" flex items-center gap-1 hover:bg-accent transition"
+				className=" flex items-center gap-1 hover:bg-background hover:shadow-sm transition ease-in duration-150"
 			>
 				<span>BTC</span>
 				<span>

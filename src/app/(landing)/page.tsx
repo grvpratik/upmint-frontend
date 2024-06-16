@@ -17,6 +17,7 @@ import getProjects from "src/actions/getProjects";
 
 import Link from "next/link";
 import LandingImages from "src/components/landing-image";
+import { Badge } from "src/components/ui/badge";
 const LandingPage = async () => {
 	const tags = await getTags();
 	const projectArray = await getProjects({});
@@ -29,7 +30,7 @@ const LandingPage = async () => {
 			<NavDesktop />
 
 			<main className="flex flex-col py-12 lg:py-32 p-4 rounded-lg root-container gap-4 relative ">
-				<LandingImages/>
+				<LandingImages />
 				<span>
 					<Link
 						href="#"
@@ -96,7 +97,9 @@ const LandingPage = async () => {
 							value="Coins"
 						>
 							Coins
-							<span className={soonBadgeClass}>soon</span>
+							<Badge className="rounded-full -top-3 -right-5 absolute leading-none ">
+								soon
+							</Badge>
 						</TabsTrigger>
 						<TabsTrigger
 							className=" relative text-sm lg:text-base"
@@ -104,7 +107,9 @@ const LandingPage = async () => {
 							value="Giveaways"
 						>
 							Giveaways
-							<span className={soonBadgeClass}>soon</span>
+							<Badge className="rounded-full -top-3 -right-5 absolute leading-none ">
+								soon
+							</Badge>
 						</TabsTrigger>
 					</TabsList>
 					<TabsContent value="Nfts">

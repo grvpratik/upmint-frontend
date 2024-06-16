@@ -19,7 +19,7 @@ const SearchInput = ({ setSearch }: { setSearch: (value: string) => void }) => {
 		setSearchInput(e.target.value);
 	};
 	return (
-		<div className=" rounded-full  flex justify-between  items-center  bg-input/70  fshadow-inner transition-background  hover:bg-border cursor-pointer mr-14 lg:mr-0 ">
+		<div className=" rounded-full w-full  flex justify-between  items-center  bg-input/70  fshadow-inner transition-background  hover:bg-border cursor-pointer mr-14 lg:mr-0 ">
 			<div className="flex w-full gap-1.5 py-2.5 pl-3 items-center   ">
 				{" "}
 				<Search className="h-4  w-4 text-foreground/70" />
